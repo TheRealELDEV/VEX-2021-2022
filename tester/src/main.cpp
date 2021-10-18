@@ -1,4 +1,5 @@
 #include "main.h"
+using namespace okapi;
 
 /**
  * A callback function for LLEMU's center button.
@@ -61,7 +62,7 @@ void competition_initialize() {}
 using namespace okapi;
 
 void autonomous() {
-	std::shared_ptr<OdomChassisController> chassis =
+	std::shared_ptr<ChassisController> chassis =
   ChassisControllerBuilder()
     .withMotors({1, 2}, {-3, -4})
     .withDimensions(AbstractMotor::gearset::blue, {{2.75_in, 10_in}, imev5GreenTPR})
