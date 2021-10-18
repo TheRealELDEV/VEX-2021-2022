@@ -92,10 +92,14 @@ void autonomous() {
   	// profileControllerF->setTarget("A");
   	// profileControllerF->waitUntilSettled();
 	profileControllerF->generatePath(
+    	{{0_ft, 0_ft, 0_deg}, {3_ft, 3_ft, 0_deg}}, "A");
+	profileControllerF->generatePath(
     	{{0_ft, 0_ft, 0_deg}, {3_ft, 3_ft, 90_deg}}, "B");
-	profileControllerF->setTarget("B", true, true);
+	profileControllerF->setTarget("B");
   	profileControllerF->waitUntilSettled();
-	chassis->turnToAngle(90_deg);
+	chassis->turnAngle(45_deg);
+	profileControllerF->setTarget("A", true, true);
+  	profileControllerF->waitUntilSettled();
 
 }
 
