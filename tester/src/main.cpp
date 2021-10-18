@@ -62,7 +62,7 @@ void competition_initialize() {}
 using namespace okapi;
 
 void autonomous() {
-	std::shared_ptr<OdomChassisController> chassis =
+	std::shared_ptr<ChassisController> chassis =
   ChassisControllerBuilder()
     .withMotors({1, 2}, {-3, -4})
     .withDimensions(AbstractMotor::gearset::blue, {{2.75_in, 10_in}, imev5GreenTPR})
@@ -96,8 +96,12 @@ void autonomous() {
     	{{0_ft, 0_ft, 0_deg}, {3_ft, 3_ft, 90_deg}}, "B");
 	profileControllerF->setTarget("B", true, true);
   	profileControllerF->waitUntilSettled();
+<<<<<<< HEAD
 
 	// chassis->turnToAngle(180_deg);
+=======
+	chassis->turnToAngle(180_deg);
+>>>>>>> parent of 0625a75 (Fixed the turnToAngle error)
 	
 
 }
