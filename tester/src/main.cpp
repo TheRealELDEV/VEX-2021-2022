@@ -61,7 +61,7 @@ void competition_initialize() {}
 using namespace okapi;
 
 void autonomous() {
-	std::shared_ptr<ChassisController> chassis =
+	std::shared_ptr<OdomChassisController> chassis =
   ChassisControllerBuilder()
     .withMotors({1, 2}, {-3, -4})
     .withDimensions(AbstractMotor::gearset::blue, {{2.75_in, 10_in}, imev5GreenTPR})
@@ -95,8 +95,7 @@ void autonomous() {
     	{{0_ft, 0_ft, 0_deg}, {3_ft, 3_ft, 90_deg}}, "B");
 	profileControllerF->setTarget("B", true, true);
   	profileControllerF->waitUntilSettled();
-	chassis->turnToAngle(180_deg);
-	
+	chassis->turnToAngle(90_deg);
 
 }
 
